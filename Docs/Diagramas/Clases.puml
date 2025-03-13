@@ -1,0 +1,70 @@
+@startuml
+
+' Definición de clases principales
+class Proyecto {
+    +id: int
+    +nombre: String
+    +descripcion: String
+    +estado: EstadoProyecto
+    +tareas: List<Tarea>
+    +asignarMiembro(usuario: Usuario)
+    +agregarTarea(tarea: Tarea)
+    +predecirRetraso(): boolean
+}
+
+class Tarea {
+    +id: int
+    +nombre: String
+    +descripcion: String
+    +estado: EstadoTarea
+    +asignadoA: Usuario
+    +actualizarEstado(estado: EstadoTarea)
+}
+
+class Usuario {
+    +id: int
+    +nombre: String
+    +rol: Rol
+}
+
+class IAAnalizador {
+    +predecirRetrasos(proyecto: Proyecto): boolean
+    +generarRecomendaciones(proyecto: Proyecto): List<String>
+}
+
+class Notificador {
+    +suscribir(observador: Observador)
+    +desuscribir(observador: Observador)
+    +notificar(mensaje: String)
+}
+
+interface Observador {
+    +actualizar(mensaje: String)
+}
+
+class EstadoProyecto {
+    {static} +ACTIVO
+    {static} +COMPLETADO
+    {static} +CANCELADO
+}
+
+class EstadoTarea {
+    {static} +PENDIENTE
+    {static} +EN_PROGRESO
+    {static} +COMPLETADA
+}
+
+class Rol {
+    {static} +ADMIN
+    {static} +GESTOR
+    {static} +DESARROLLADOR
+}
+
+' Relaciones entre clases
+Proyecto "1" -- "*" Tarea : contiene
+Proyecto "1" -- "*" Usuario : asignados
+Tarea "1" -- "1" Usuario : asignado a
+Proyecto "1" -- "1" IAAnalizador : usa
+Notificador "1" -- "*" Observador : notifica
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+start
+
+:Usuario inicia sesión;
+:Selecciona un proyecto;
+
+if (¿Crear nueva tarea?) then (Sí)
+    :Usuario ingresa detalles de la tarea;
+    :Sistema agrega la tarea al proyecto;
+else (No)
+endif
+
+:Usuario actualiza el estado de una tarea;
+:Sistema verifica el estado del proyecto;
+
+if (¿Se completaron todas las tareas?) then (Sí)
+    :Sistema marca el proyecto como COMPLETADO;
+else (No)
+endif
+
+:Sistema ejecuta análisis con IA;
+if (¿Hay riesgo de retraso?) then (Sí)
+    :IA genera recomendaciones;
+    :Sistema envía notificaciones a los usuarios;
+else (No)
+endif
+
+:Usuario revisa reportes y recomendaciones;
+stop
+
+@enduml

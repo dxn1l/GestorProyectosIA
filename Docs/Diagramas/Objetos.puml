@@ -1,0 +1,57 @@
+@startuml
+
+' Creación de instancias de objetos
+object Proyecto1 {
+    id = 1
+    nombre = "Gestión Ágil"
+    descripcion = "Plataforma de gestión de proyectos con IA"
+    estado = ACTIVO
+}
+
+object Tarea1 {
+    id = 101
+    nombre = "Implementar API"
+    descripcion = "Desarrollar el backend para gestión de tareas"
+    estado = EN_PROGRESO
+    asignadoA = Usuario1
+}
+
+object Tarea2 {
+    id = 102
+    nombre = "Diseño UI/UX"
+    descripcion = "Crear los wireframes y prototipos"
+    estado = PENDIENTE
+    asignadoA = Usuario2
+}
+
+object Usuario1 {
+    id = 1
+    nombre = "Ana Pérez"
+    rol = DESARROLLADOR
+}
+
+object Usuario2 {
+    id = 2
+    nombre = "Carlos Gómez"
+    rol = GESTOR
+}
+
+object IAAnalizador1 {
+    predecirRetrasos() = false
+    generarRecomendaciones() = ["Optimizar asignación de tareas", "Automatizar reportes"]
+}
+
+object Notificador1 {
+    suscriptores = [Usuario1, Usuario2]
+}
+
+' Relaciones entre objetos
+Proyecto1 --|> Tarea1
+Proyecto1 --|> Tarea2
+Tarea1 --> Usuario1 : asignado a
+Tarea2 --> Usuario2 : asignado a
+Proyecto1 --> IAAnalizador1 : usa
+Notificador1 --> Usuario1 : notifica
+Notificador1 --> Usuario2 : notifica
+
+@enduml
