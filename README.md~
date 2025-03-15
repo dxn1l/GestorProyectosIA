@@ -47,28 +47,6 @@ GestorProyectosIA
 │── pom.xml              # Configuración de Maven
 │── README.md            # Documentación del proyecto
 ```
----
-
-## 📜 PDFs
-Los documentos generados en el proyecto están disponibles en la carpeta `Docs/PDFs`. A continuación, se describe brevemente el contenido de cada uno:
-
-1. **Análisis y Selección de Principios de Diseño** 📄
-    - Explicación y aplicación de los principios **SOLID, DRY, KISS y YAGNI** en la arquitectura del sistema.
-
-2. **Identificación y Justificación de Patrones de Diseño** 🏗️
-    - Selección y justificación de los patrones **Factory Method, Facade y Observer** para el proyecto.
-
-3. **Esquema de la Arquitectura del Software** 🖥️
-    - Diagrama UML de clases representando la estructura y relaciones de los componentes del sistema.
-
-4. **Estrategia de Control de Calidad y Pruebas Unitarias** ✅
-    - Descripción de la estrategia de pruebas unitarias implementadas con JUnit 5.
-
-5. **Análisis Comparativo con Arquitecturas Industriales** 🔍
-    - Comparación de la arquitectura del sistema con modelos industriales como Microservicios y MVC.
-
-6. **Informe Final Integrado** 📊
-    - Resumen de todo el proceso de diseño, implementación y pruebas del sistema.
 
 ---
 
