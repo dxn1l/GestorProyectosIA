@@ -1,57 +1,79 @@
 @startuml
 
-' Creación de instancias de objetos
-object Proyecto1 {
-    id = 1
-    nombre = "Gestión Ágil"
-    descripcion = "Plataforma de gestión de proyectos con IA"
-    estado = ACTIVO
+object usuario1 {
+  id = 1
+  nombre = "Juan Pérez"
+  email = "juan@example.com"
+  rol = "Administrador"
 }
 
-object Tarea1 {
-    id = 101
-    nombre = "Implementar API"
-    descripcion = "Desarrollar el backend para gestión de tareas"
-    estado = EN_PROGRESO
-    asignadoA = Usuario1
+object usuario2 {
+  id = 2
+  nombre = "María López"
+  email = "maria@example.com"
+  rol = "Colaborador"
 }
 
-object Tarea2 {
-    id = 102
-    nombre = "Diseño UI/UX"
-    descripcion = "Crear los wireframes y prototipos"
-    estado = PENDIENTE
-    asignadoA = Usuario2
+object proyecto1 {
+  id = 101
+  nombre = "Plataforma de Gestión"
+  descripcion = "Sistema de gestión de proyectos con IA"
+  fechaInicio = "2025-03-01"
+  fechaFin = "2025-12-31"
+  estado = "En Progreso"
 }
 
-object Usuario1 {
-    id = 1
-    nombre = "Ana Pérez"
-    rol = DESARROLLADOR
+object tarea1 {
+  id = 1001
+  titulo = "Desarrollo del Backend"
+  descripcion = "Implementar la API y lógica de negocio"
+  responsable = usuario1
+  fechaLimite = "2025-06-30"
+  estado = "Pendiente"
 }
 
-object Usuario2 {
-    id = 2
-    nombre = "Carlos Gómez"
-    rol = GESTOR
+object tarea2 {
+  id = 1002
+  titulo = "Diseño UI/UX"
+  descripcion = "Crear la interfaz de usuario basada en UX"
+  responsable = usuario2
+  fechaLimite = "2025-04-15"
+  estado = "En Progreso"
 }
 
-object IAAnalizador1 {
-    predecirRetrasos() = false
-    generarRecomendaciones() = ["Optimizar asignación de tareas", "Automatizar reportes"]
+object aiAssistant {
+  generarPredicciones()
+  sugerirMejoras()
 }
 
-object Notificador1 {
-    suscriptores = [Usuario1, Usuario2]
+object comentario1 {
+  id = 5001
+  autor = usuario2
+  contenido = "Debemos mejorar la accesibilidad en la UI."
+  fecha = "2025-03-10"
 }
 
-' Relaciones entre objetos
-Proyecto1 --|> Tarea1
-Proyecto1 --|> Tarea2
-Tarea1 --> Usuario1 : asignado a
-Tarea2 --> Usuario2 : asignado a
-Proyecto1 --> IAAnalizador1 : usa
-Notificador1 --> Usuario1 : notifica
-Notificador1 --> Usuario2 : notifica
+object notificacion1 {
+  id = 6001
+  mensaje = "Tienes una nueva tarea asignada"
+  usuarioDestino = usuario1
+}
+
+object changeLog1 {
+  id = 7001
+  descripcion = "Tarea 1001 cambiada a 'En Progreso'"
+  fechaCambio = "2025-03-12"
+  usuario = usuario1
+}
+
+usuario1 -- proyecto1
+usuario2 -- proyecto1
+proyecto1 -- tarea1
+proyecto1 -- tarea2
+aiAssistant -- tarea1
+aiAssistant -- tarea2
+usuario2 -- comentario1
+usuario1 -- notificacion1
+usuario1 -- changeLog1
 
 @enduml

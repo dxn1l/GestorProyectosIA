@@ -2,31 +2,36 @@
 
 start
 
-:Usuario inicia sesión;
-:Selecciona un proyecto;
-
-if (¿Crear nueva tarea?) then (Sí)
-    :Usuario ingresa detalles de la tarea;
-    :Sistema agrega la tarea al proyecto;
+:Inicio de Sesión;
+if (Usuario autenticado?) then (Sí)
+  :Mostrar panel de proyectos;
+  if (Seleccionar un proyecto?) then (Sí)
+    :Cargar tareas del proyecto;
+    if (Crear nueva tarea?) then (Sí)
+      :Ingresar detalles de la tarea;
+      :Asignar responsable;
+      :Guardar tarea;
+    endif
+    if (Actualizar estado de tarea?) then (Sí)
+      :Modificar estado;
+      :Guardar cambios;
+      :Notificar a los involucrados;
+    endif
+    if (Consultar sugerencias de IA?) then (Sí)
+      :Analizar tareas;
+      :Generar predicciones;
+      :Mostrar recomendaciones;
+    endif
+    if (Agregar comentario a tarea?) then (Sí)
+      :Escribir comentario;
+      :Guardar comentario;
+    endif
+  endif
+  :Cerrar sesión;
 else (No)
+  :Mostrar mensaje de error;
 endif
 
-:Usuario actualiza el estado de una tarea;
-:Sistema verifica el estado del proyecto;
-
-if (¿Se completaron todas las tareas?) then (Sí)
-    :Sistema marca el proyecto como COMPLETADO;
-else (No)
-endif
-
-:Sistema ejecuta análisis con IA;
-if (¿Hay riesgo de retraso?) then (Sí)
-    :IA genera recomendaciones;
-    :Sistema envía notificaciones a los usuarios;
-else (No)
-endif
-
-:Usuario revisa reportes y recomendaciones;
 stop
 
 @enduml
