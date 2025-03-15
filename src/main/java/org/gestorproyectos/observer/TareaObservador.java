@@ -1,4 +1,4 @@
-package org.example.gestorproyectos.observer;
+package org.gestorproyectos.observer;
 
 import java.util.ArrayList;
 import java.util.List;

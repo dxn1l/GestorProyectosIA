@@ -1,4 +1,8 @@
-package org.example.gestorproyectos.facade;
+package org.gestorproyectos.facade;
+
+
+// 2. PATRÓN ESTRUCTURAL - FACADE
+// Proporciona una interfaz unificada para gestionar proyectos y usuarios
 
 public class ProyectoFacade {
     private ProyectoService proyectoService;

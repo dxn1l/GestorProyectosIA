@@ -1,4 +1,4 @@
-package org.example.gestorproyectos.facade;
+package org.gestorproyectos.facade;
 
 public class UsuarioService {
     public void validarUsuario(String usuario) {

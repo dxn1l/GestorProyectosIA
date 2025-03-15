@@ -1,0 +1,16 @@
+package org.gestorproyectos.facade;
+
+class ProyectoFacadeTest {
+    @Test
+    void testIniciarProyecto() {
+        ProyectoFacade facade = new ProyectoFacade();
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        facade.iniciarProyecto("Gestor de Tareas", "Juan Perez");
+
+        String salida = outputStream.toString().trim();
+        assertTrue(salida.contains("Usuario validado") && salida.contains("Proyecto creado"));
+    }
+}

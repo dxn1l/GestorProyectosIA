@@ -1,4 +1,4 @@
-package org.example.gestorproyectos.facade;
+package org.gestorproyectos.facade;
 
 public class ProyectoService {
     public void crearProyecto(String nombre) {

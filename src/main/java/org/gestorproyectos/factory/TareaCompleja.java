@@ -1,4 +1,4 @@
-package org.example.gestorproyectos.factory;
+package org.gestorproyectos.factory;
 
 public class TareaCompleja extends Tarea {
     @Override

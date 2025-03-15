@@ -1,4 +1,4 @@
-package org.example.gestorproyectos.observer;
+package org.gestorproyectos.observer;
 
 public class Usuario implements Observador {
     private String nombre;

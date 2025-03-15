@@ -1,9 +1,10 @@
-package org.example.gestorproyectos;
+package org.gestorproyectos;
 
-import org.example.gestorproyectos.facade.ProyectoFacade;
-import org.example.gestorproyectos.factory.Tarea;
-import org.example.gestorproyectos.factory.TareaFactory;
-import org.example.gestorproyectos.observer.Usuario;
+import org.gestorproyectos.facade.ProyectoFacade;
+import org.gestorproyectos.factory.Tarea;
+import org.gestorproyectos.factory.TareaFactory;
+import org.gestorproyectos.observer.TareaObservador;
+import org.gestorproyectos.observer.Usuario;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Main {
         facade.iniciarProyecto("Sistema de Gestión", "Juan Perez");
 
         // Uso de Observer
-        Tarea tareaObservada = new Tarea();
+        TareaObservador tareaObservada = new TareaObservador();
         Usuario usuario1 = new Usuario("María");
         Usuario usuario2 = new Usuario("Carlos");
 
