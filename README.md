@@ -4,6 +4,11 @@
 
 ---
 
+[![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)](https://github.com/dxn1l/GestorProyectosIA)
+
+
+---
+
 ## 📌 Características Principales
 - 🏗 **Arquitectura Modular** basada en patrones de diseño (**Factory Method, Facade y Observer**).
 - 🔍 **Sistema de notificaciones** para usuarios con eventos en tareas.
